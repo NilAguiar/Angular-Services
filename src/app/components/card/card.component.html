@@ -1,0 +1,17 @@
+<div class="card">
+  <input type="text" placeholder="Digite o Pokemon" (input)="getPokemon($any($event.target).value)">
+  <div class="card__title">
+    <h3>{{ pokemon.name }} <span>{{pokemon.id}}</span></h3>
+  </div>
+  <div class="card__body">
+    <img [src]="pokemon.sprites.other.dream_world.front_default" alt="pokemon">
+  </div>
+  <div class="card__stats">
+    <span
+      class="card__stats__type"
+      *ngFor="let type of pokemon.types"
+    >
+    {{ type.type.name }}
+    </span>
+  </div>
+</div>
